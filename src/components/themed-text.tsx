@@ -4,7 +4,19 @@ import { Fonts, ThemeColor } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 
 export type ThemedTextProps = TextProps & {
-  type?: 'default' | 'title' | 'small' | 'smallBold' | 'subtitle' | 'link' | 'linkPrimary' | 'code';
+  type?:
+    | 'default'
+    | 'title'
+    | 'hero'
+    | 'heading'
+    | 'subtitle'
+    | 'small'
+    | 'smallBold'
+    | 'caption'
+    | 'label'
+    | 'link'
+    | 'linkPrimary'
+    | 'code';
   themeColor?: ThemeColor;
 };
 
@@ -35,10 +47,32 @@ const styles = StyleSheet.create({
     fontWeight: 600,
     lineHeight: 52,
   },
-  subtitle: {
-    fontSize: 32,
+  hero: {
+    fontSize: 40,
+    fontWeight: 700,
     lineHeight: 44,
-    fontWeight: 600,
+  },
+  heading: {
+    fontSize: 28,
+    fontWeight: 700,
+    lineHeight: 34,
+  },
+  subtitle: {
+    fontSize: 24,
+    lineHeight: 30,
+    fontWeight: 700,
+  },
+  caption: {
+    fontSize: 12,
+    lineHeight: 16,
+    fontWeight: 500,
+  },
+  label: {
+    fontSize: 11,
+    lineHeight: 14,
+    fontWeight: 700,
+    letterSpacing: 0.6,
+    textTransform: 'uppercase',
   },
   link: {
     lineHeight: 30,
